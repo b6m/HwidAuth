@@ -11,7 +11,7 @@ class hwid():
     def check(self):
         check = httpx.get(self.database)
         for line in check.text.split('\n'):
-            if 'self.hwid' in line:
+            if self.hwid in line:
                 return True
         return False
 
